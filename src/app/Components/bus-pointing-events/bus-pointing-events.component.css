@@ -1,0 +1,15 @@
+.employee-photo {
+    width:35%; 
+    height: 35%; 
+    display: block;
+    margin-left: 40%; 
+  } 
+  .table {
+    table-layout: fixed; /* Ensures columns take up fixed space */
+    width: 100%;
+}
+
+.table th, .table td {
+    text-align: center; /* Center-align text in table cells */
+}
+

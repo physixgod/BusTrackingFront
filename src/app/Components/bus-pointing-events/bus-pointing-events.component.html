@@ -1,0 +1,63 @@
+<div class="content-wrapper">
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">
+      <span class="text-muted fw-light"></span>Employee Bus Tracking Dashboard
+    </h4>
+    <!-- Search Input -->
+    <form class="d-flex mb-3">
+      <style>
+        .input-group-merge {
+          width: 30%;
+          height: 30%;
+        }
+      </style>
+      <div class="input-group input-group-merge">
+        <span class="input-group-text" id="basic-addon-search31">
+          <i class="bx bx-search"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by employee name"
+          aria-label="Search..."
+          aria-describedby="basic-addon-search31"
+          [(ngModel)]="searchName"
+          name="searchName"
+          (input)="onSearch()"
+        />
+      </div>
+    </form>
+    <!-- Employee Events Table -->
+    <div class="card">
+      <h5 class="card-header">Employees Bus Tracking Table</h5>
+      <div class="table-responsive text-nowrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Employee First Name</th>
+              <th>Employee Last Name</th>
+              <th>Pointing Time</th>
+              <th>Employee Photo</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody class="table-border-bottom-0">
+            <tr *ngFor="let event of filteredTrackingEvents">
+              <td>{{ event.employeeFirstName || 'N/A' }}</td>
+              <td>{{ event.employeeLastName || 'N/A' }}</td>
+              <td>{{ event.timestamp | date:'HH:mm:ss' }}</td>
+              <td class="text-center">
+                <img *ngIf="event.employeePhotoUrl" [src]="event.employeePhotoUrl" alt="Employee Photo" class="rounded-circle employee-photo" />
+              </td>
+              <td>
+                <button class="btn btn-primary me-2" (click)="showEventHistory(event.trackingEventID)">
+                  <i class="bx bx-file me-1"></i> Show History
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

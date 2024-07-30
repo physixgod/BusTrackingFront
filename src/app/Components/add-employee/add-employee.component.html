@@ -1,0 +1,78 @@
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light"></span>Add New Employee</h4>
+      <div class="row">
+        <div class="col-xxl">
+          <div class="card mb-4">
+            <div class="card-header d-flex align-items-center justify-content-between">
+              <h5 class="mb-0">Employee Form</h5>
+            </div>
+            <div class="card-body">
+              <form *ngIf="!employeeAdded">
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="matricule">Registration number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.matricule" name="matricule" id="matricule" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="rfid">RFID</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control" [(ngModel)]="employee.rfid" name="rfid" id="rfid" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="employee-first-name">First Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.employeeFirstName" name="employeeFirstName" id="employee-first-name" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="employee-last-name">Last Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.employeeLastName" name="employeeLastName" id="employee-last-name" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="address">Address</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.adresse" name="address" id="address" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="region">Region</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.region" name="region" id="region" />
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label class="col-sm-2 col-form-label" for="gouvernement">Government</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control" [(ngModel)]="employee.gouvernement" name="gouvernement" id="gouvernement" />
+                  </div>
+                </div>
+                <div class="row justify-content-end">
+                  <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary save-employee-button" (click)="addEmployee()">Save Employee</button>
+                  </div>
+                </div>
+              </form>
+  
+              <form *ngIf="employeeAdded">
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Employee Image</label>
+                  <input class="form-control" type="file" id="formFile" (change)="onFileSelected($event)" />
+                </div>
+                <div class="row justify-content-end">
+                  <div class="col-sm-10">
+                    <button type="button" class="btn btn-primary upload-image-button" (click)="uploadImage()">Upload Employee Image</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

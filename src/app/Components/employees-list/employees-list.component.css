@@ -1,0 +1,18 @@
+.card-img-top {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image covers the entire area */
+    border-radius: 50%; /* Make the image circular */
+    margin: 0 auto; /* Center the image horizontally */
+    display: block; /* Ensure block-level for centering */
+    margin-top: 10px; /* Add some margin at the top */
+  }
+  
+  .card-body {
+    text-align: center; /* Center the text inside the card body */
+  }
+  
+  .card-title {
+    margin-top: 15px; /* Add some space between the image and the title */
+  }
+  
