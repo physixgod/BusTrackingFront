@@ -41,13 +41,15 @@
               <li class="list-group-item" style="text-align: left">
                 <strong>Registration Number:</strong> {{ employee.matricule
                 }}<br />
+                <strong>Department:</strong> {{ employee.department }}<br />
+                <strong>Email:</strong> {{ employee.email }}<br />
                 <strong>Region:</strong> {{ employee.region }}<br />
                 <strong>Government:</strong> {{ employee.gouvernement }}
               </li>
               <!-- Add other employee details here -->
             </ul>
             <div class="mt-3">
-              <button class="btn btn-outline-primary">Show Profile</button>
+                <button class="btn btn-outline-primary" (click)="showProfile(employee)">Show Profile</button>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Employee } from 'src/app/models/employees';
 import { EmployeeService } from 'src/app/Services/employee.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-employee',
@@ -14,7 +15,7 @@ export class AddEmployeeComponent {
   imageUrl: string | ArrayBuffer | null = null;
   employeeId: number = 0;
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService, private router: Router) { }
 
   addEmployee(): void {
     this.employeeService.addEmployee(this.employee).subscribe({
@@ -41,7 +42,7 @@ export class AddEmployeeComponent {
       this.employeeService.uploadImage(this.employeeId, this.uploadedImage).subscribe({
         next: (response) => {
           console.log('Employee image uploaded successfully', response);
-          this.getEmployeeImage();
+          this.router.navigate(['/EmployeesList']);
         },
         error: (error) => {
           console.error('There was an error uploading the image', error);

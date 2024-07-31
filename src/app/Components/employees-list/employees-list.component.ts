@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/Services/employee.service';
 import { Employee } from 'src/app/models/employees';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employees-list',
@@ -12,7 +13,7 @@ export class EmployeesListComponent implements OnInit {
   filteredEmployees: Employee[] = [];
   searchName: string = '';
 
-  constructor(private employeeService: EmployeeService) { }
+  constructor(private employeeService: EmployeeService,private router: Router) { }
 
   ngOnInit(): void {
     this.loadAllEmployees();
@@ -56,5 +57,11 @@ export class EmployeesListComponent implements OnInit {
         console.error('There was an error retrieving the image', error);
       }
     });
+  }
+  showProfile(employee: Employee): void {
+    
+    this.router.navigate(['/EmployeeProfile'], { state: { employee } });
+    
+
   }
 }

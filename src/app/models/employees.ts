@@ -7,6 +7,8 @@ export class Employee {
     employeeLastName!: string;
     adresse!: string;
     region!: string;
+    department!:string;
+    email!:string;
     gouvernement!: string;
     pointedBus!: boolean;
     pointedIn!: boolean;

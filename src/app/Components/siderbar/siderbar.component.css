@@ -1,0 +1,25 @@
+
+.menu-icon {
+  font-size: 24px; 
+}
+
+
+.menu-text {
+  font-size: 15px; 
+}
+
+
+.menu-item {
+  padding: 10px 13px; 
+  display: flex; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-item.active {
+  background-color: #e0e0e0;
+}
