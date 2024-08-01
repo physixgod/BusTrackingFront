@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { AuthLayoutComponent } from './Components/auth-layout/auth-layout.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
+import { AuthGuard } from './auth.guard';
+import { EmployeeMapViewComponent } from './Components/employee-map-view/employee-map-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -25,10 +27,11 @@ const routes: Routes = [
     path: '',
     component: MainLayoutComponent,
     children: [
-      { path: 'EmployeesBusEvents', component: BusPointingEventsComponent },
-      { path: 'AddEmployee', component: AddEmployeeComponent },
-      { path: 'EmployeesList', component: EmployeesListComponent },
-      { path: 'EmployeeProfile', component: EmployeeProfileComponent }
+      { path: 'EmployeesBusEvents', component: BusPointingEventsComponent, canActivate: [AuthGuard] },
+      { path: 'AddEmployee', component: AddEmployeeComponent, canActivate: [AuthGuard] },
+      { path: 'EmployeesList', component: EmployeesListComponent, canActivate: [AuthGuard] },
+      { path: 'EmployeeProfile', component: EmployeeProfileComponent, canActivate: [AuthGuard] },
+      { path: 'Mapview', component: EmployeeMapViewComponent, canActivate: [AuthGuard] }
     ]
   },
   { path: '**', redirectTo: '' }

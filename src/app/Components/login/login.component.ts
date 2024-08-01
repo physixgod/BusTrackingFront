@@ -24,7 +24,8 @@ export class LoginComponent {
         next: (response) => {
           console.log('Login successful:', response);
           this.errorMessage = null; 
-          this.router.navigate(['/EmployeesList']); 
+          localStorage.setItem('isLoggedIn', 'true');
+          this.router.navigate(['EmployeesBusEvents']);
         },
         error: (error) => {
           console.error('Login error:', error);
