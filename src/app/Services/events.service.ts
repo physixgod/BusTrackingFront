@@ -20,5 +20,11 @@ export class EventsService {
   addEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(`${this.apiUrl}/AddEmployee`, employee);
   }
+  getMonthlyEvents(): Observable<TrackingEvent[]> {
+    return this.http.get<TrackingEvent[]>(`${this.apiUrl}/GetMonthlyEvents`);
+  }
+  getMonthlyEventsByEmployee(rfid: number): Observable<TrackingEvent[]> {
+    return this.http.get<TrackingEvent[]>(`${this.apiUrl}/GetMonthlyEvents/${rfid}`);
+  }
 
 }

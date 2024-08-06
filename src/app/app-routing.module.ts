@@ -15,6 +15,7 @@ import { ForgetPasswordComponent } from './Components/forget-password/forget-pas
 import { AuthGuard } from './auth.guard';
 import { EmployeeMapViewComponent } from './Components/employee-map-view/employee-map-view.component';
 import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add-employees-excel.component';
+import { EmployeeHistoryComponent } from './Components/employee-history/employee-history.component';
 const routes: Routes = [
   {
     path: '',
@@ -33,7 +34,8 @@ const routes: Routes = [
       { path: 'EmployeesList', component: EmployeesListComponent, canActivate: [AuthGuard] },
       { path: 'EmployeeProfile', component: EmployeeProfileComponent, canActivate: [AuthGuard] },
       { path: 'Mapview', component: EmployeeMapViewComponent, canActivate: [AuthGuard] },
-      {path:'AddEmployeeExcel',component:AddEmployeesExcelComponent,canActivate:[AuthGuard]}
+      { path: 'AddEmployeeExcel',component:AddEmployeesExcelComponent,canActivate:[AuthGuard]},
+      { path: 'EmployeeHistory',component:EmployeeHistoryComponent,canActivate:[AuthGuard]}
     ]
   },
   { path: '**', redirectTo: '' }

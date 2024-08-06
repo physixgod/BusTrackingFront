@@ -10,5 +10,6 @@ export class TrackingEvent {
     employeeFirstName?: string;  
     employeeLastName?: string;   
     employeePhotoUrl!:string;
-    
+    pointingIn!:Date;
+    pointingOut!:Date; 
 }

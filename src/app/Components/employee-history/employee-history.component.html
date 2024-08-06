@@ -1,0 +1,37 @@
+<div class="content-wrapper">
+    <div class="container-xxl flex-grow-1 container-p-y">
+      <h4 class="fw-bold py-3 mb-4">
+        <span class="text-muted fw-light"></span>{{employeeName}} History
+      </h4>
+      <div class="card">
+        <h5 class="card-header">Employee Tracking History for {{ monthName }} </h5>
+        <div class="table-responsive text-nowrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Day of the Month</th>
+                <th>Boarding Time</th>
+                <th>Arrival Time</th>
+                <th>Departure Time</th>
+              </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+              <tr *ngFor="let event of trackingEvents">
+                <td>{{ event.timestamp | dayMonth }}</td>
+                <td>{{ event.timestamp | date:'HH:mm:ss' }}</td>
+                <td>
+                  <span *ngIf="(event.pointingIn | date:'HH:mm:ss') === '00:00:00'" >N/A</span>
+                  <span *ngIf="(event.pointingIn | date:'HH:mm:ss') !== '00:00:00'">{{ event.pointingIn | date:'HH:mm:ss' }}</span>
+                </td>
+                <td>
+                  <span *ngIf="(event.pointingOut | date:'HH:mm:ss') === '00:00:00'" >N/A</span>
+                  <span *ngIf="(event.pointingOut | date:'HH:mm:ss') !== '00:00:00'">{{ event.pointingOut | date:'HH:mm:ss' }}</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  

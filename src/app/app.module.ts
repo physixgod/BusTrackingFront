@@ -19,6 +19,8 @@ import { MainLayoutComponent } from './Components/main-layout/main-layout.compon
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { EmployeeMapViewComponent } from './Components/employee-map-view/employee-map-view.component';
 import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add-employees-excel.component';
+import { EmployeeHistoryComponent } from './Components/employee-history/employee-history.component';
+import { DayMonthPipe } from './day-month.pipe';
 
 
 
@@ -38,6 +40,8 @@ import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add
     ForgetPasswordComponent,
     EmployeeMapViewComponent,
     AddEmployeesExcelComponent,
+    EmployeeHistoryComponent,
+    DayMonthPipe,
     
   ],
   imports: [

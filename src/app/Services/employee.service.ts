@@ -38,4 +38,13 @@ export class EmployeeService {
   addEmployees(employees: Employee[]): Observable<Employee[]> {
     return this.http.post<Employee[]>(`${this.apiUrl}/AddEmployees`, employees);
   }
+  getMonthlyEvents(): Observable<TrackingEvent[]> {
+    return this.http.get<TrackingEvent[]>(`${this.apiUrl}/GetMonthlyEvents`);
+  }
+  getEmployeeByEvent(idEvent: number): Observable<number> {
+    return this.http.get<number>(`${this.apiUrl}/GetEmployeeByEvent/${idEvent}`);
+  }
+  getEmployeeByRFID(rfid: number): Observable<Employee> {
+    return this.http.get<Employee>(`${this.apiUrl}/GetEmployeeByRFID/${rfid}`);
+  }
 }
