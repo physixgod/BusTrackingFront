@@ -19,7 +19,7 @@ import * as L from 'leaflet';
 export class EmployeeMapViewComponent implements AfterViewInit {
   trackingEvents: TrackingEvent[] = [];
   map: any;
-  defaultImageUrl: string = '/assets/images/avatars/avatar.jpg';
+  
 
   constructor(
     private employeeService: EmployeeService,
@@ -34,7 +34,7 @@ export class EmployeeMapViewComponent implements AfterViewInit {
         .then((leaflet) => {
           this.map = leaflet
             .map(this.elementRef.nativeElement.querySelector('#map'))
-            .setView([36.8065, 10.1815], 13.35);
+            .setView([36.8065, 10.1815], 14);
 
           leaflet
             .tileLayer(
@@ -80,7 +80,7 @@ export class EmployeeMapViewComponent implements AfterViewInit {
       },
       error: (error) => {
         console.error('There was an error retrieving the image', error);
-        event.employeePhotoUrl = this.defaultImageUrl;
+        
         this.addMarker(event);
       },
     });

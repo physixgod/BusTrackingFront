@@ -18,6 +18,7 @@ import { AuthLayoutComponent } from './Components/auth-layout/auth-layout.compon
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { EmployeeMapViewComponent } from './Components/employee-map-view/employee-map-view.component';
+import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add-employees-excel.component';
 
 
 
@@ -36,6 +37,7 @@ import { EmployeeMapViewComponent } from './Components/employee-map-view/employe
     MainLayoutComponent,
     ForgetPasswordComponent,
     EmployeeMapViewComponent,
+    AddEmployeesExcelComponent,
     
   ],
   imports: [

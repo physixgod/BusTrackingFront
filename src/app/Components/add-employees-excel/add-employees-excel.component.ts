@@ -3,14 +3,14 @@ import { Employee } from 'src/app/models/employees';
 import { EmployeeService } from 'src/app/Services/employee.service';
 import { Router } from '@angular/router';
 import * as XLSX from 'xlsx';
-
 @Component({
-  selector: 'app-add-employee',
-  templateUrl: './add-employee.component.html',
-  styleUrls: ['./add-employee.component.css']
+  selector: 'app-add-employees-excel',
+  templateUrl: './add-employees-excel.component.html',
+  styleUrls: ['./add-employees-excel.component.css']
 })
-export class AddEmployeeComponent {
-  employee: Employee = new Employee();
+export class AddEmployeesExcelComponent {
+
+   employee: Employee = new Employee();
   employeeAdded: boolean = false;
   uploadedImage: File | null = null;
   imageUrl: string | ArrayBuffer | null = null;

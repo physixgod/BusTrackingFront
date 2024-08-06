@@ -81,6 +81,17 @@
                   </div>
                 </div>
               </form>
+              <div class="input-group mt-3">
+                <input
+                  type="file"
+                  class="form-control"
+                  id="inputGroupFile04"
+                  aria-describedby="inputGroupFileAddon04"
+                  aria-label="Upload"
+                  (change)="onExcelFileSelected($event)"
+                />
+                <button class="btn btn-outline-primary" type="button" id="inputGroupFileAddon04" (click)="uploadEmployees()">Upload Employees</button>
+              </div>
             </div>
           </div>
         </div>
