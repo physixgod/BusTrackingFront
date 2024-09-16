@@ -1,0 +1,77 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+  <h4 class="fw-bold py-3 mb-4">
+    <span class="text-muted fw-light">Bus /</span> Add Bus
+  </h4>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-pills flex-column flex-md-row mb-3">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/Bus"
+            ><i class="bx bx-plus-circle me-1"></i> Add Bus
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/BusDetails"
+            ><i class="fas fa-bus me-1"></i>Bus Details</a
+          >
+        </li>
+      </ul>
+      <div class="card mb-4">
+        <h5 class="card-header">Bus Form</h5>
+        <div class="card-body">
+          <!-- Success and Error Messages -->
+          <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+          <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+          <!-- Form starts here -->
+          <form (ngSubmit)="addBus()">
+            <div class="row">
+              <div class="mb-3 col-md-6">
+                <label for="immatriculation" class="form-label">Immatriculation</label>
+                <input
+                  [(ngModel)]="bus.immatriculation"
+                  name="immatriculation"
+                  class="form-control"
+                  type="text"
+                  id="immatriculation"
+                  placeholder="Enter Immatriculation"
+                  required
+                />
+              </div>
+
+              <div class="mb-3 col-md-6">
+                <label for="modelBus" class="form-label">Bus Model</label>
+                <input
+                  [(ngModel)]="bus.modelBus"
+                  name="modelBus"
+                  class="form-control"
+                  type="text"
+                  id="modelBus"
+                  placeholder="Enter Bus Model"
+                />
+              </div>
+
+              <div class="mb-3 col-md-6">
+                <label for="capaciteBus" class="form-label">Bus Capacity</label>
+                <input
+                  [(ngModel)]="bus.capaciteBus"
+                  name="capaciteBus"
+                  class="form-control"
+                  type="number"
+                  id="capaciteBus"
+                  placeholder="Enter Bus Capacity"
+                />
+              </div>
+            </div>
+            <div class="mt-2">
+              <button type="submit" class="btn btn-primary me-2">Add Bus</button>
+              <button type="reset" class="btn btn-outline-secondary">Cancel</button>
+            </div>
+          </form>
+          <!-- Form ends here -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -40,8 +40,18 @@
                     <a [routerLink]="['/forgetpassword']"><small>Forgot Password?</small></a>
                   </div>
                   <div class="input-group input-group-merge">
-                    <input type="password" id="password" class="form-control" [(ngModel)]="loginRequest.password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" required />
-                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    <input
+                      [type]="showPassword ? 'text' : 'password'"  
+                      id="password"
+                      class="form-control"
+                      [(ngModel)]="loginRequest.password"
+                      name="password"
+                      placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                      required
+                    />
+                    <span class="input-group-text cursor-pointer" (click)="togglePasswordVisibility()">  <!-- Toggle on click -->
+                      <i class="bx" [ngClass]="showPassword ? 'bx-show' : 'bx-hide'"></i> <!-- Change icon based on visibility -->
+                    </span>
                   </div>
                 </div>
                 <div class="mb-3">

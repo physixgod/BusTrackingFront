@@ -38,7 +38,7 @@ export class AddEmployeeComponent {
   }
 
   onFileSelected(event: any): void {
-    this.file = event.target.files[0];
+    this.uploadedImage = event.target.files[0];  
   }
   onExcelFileSelected(event: any): void {
     this.file = event.target.files[0];

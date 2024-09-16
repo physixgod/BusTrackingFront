@@ -21,6 +21,11 @@ import { EmployeeMapViewComponent } from './Components/employee-map-view/employe
 import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add-employees-excel.component';
 import { EmployeeHistoryComponent } from './Components/employee-history/employee-history.component';
 import { DayMonthPipe } from './day-month.pipe';
+import { AddUserComponent } from './Components/add-user/add-user.component';
+import { SignalRService } from './Services/signalR.service';
+import { DriverComponent } from './Components/driver/driver.component';
+import { BusComponentComponent } from './Components/bus-component/bus-component.component';
+import { BusDetailsComponent } from './Components/bus-details/bus-details.component';
 
 
 
@@ -42,6 +47,10 @@ import { DayMonthPipe } from './day-month.pipe';
     AddEmployeesExcelComponent,
     EmployeeHistoryComponent,
     DayMonthPipe,
+    AddUserComponent,
+    DriverComponent,
+    BusComponentComponent,
+    BusDetailsComponent,
     
   ],
   imports: [
@@ -51,7 +60,7 @@ import { DayMonthPipe } from './day-month.pipe';
     FormsModule
     
   ],
-  providers: [],
+  providers: [SignalRService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

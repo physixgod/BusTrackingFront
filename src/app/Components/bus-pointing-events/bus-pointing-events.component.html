@@ -36,9 +36,8 @@
             <tr>
               <th>Employee First Name</th>
               <th>Employee Last Name</th>
-              <th>Boarding Time</th>
-              <th>Arrival Time</th>
               <th>Departure Time</th>
+              <th>Boarding Time</th>
               <th>Employee Photo</th>
               <th>Actions</th>
             </tr>
@@ -51,10 +50,6 @@
               <td>
                 <span *ngIf="(event.pointingIn | date:'HH:mm:ss') === '00:00:00'" class="badge bg-label-warning me-1">Pending</span>
                 <span *ngIf="(event.pointingIn | date:'HH:mm:ss') !== '00:00:00'">{{ event.pointingIn | date:'HH:mm:ss' }}</span>
-              </td>
-              <td>
-                <span *ngIf="(event.pointingOut | date:'HH:mm:ss') === '00:00:00'" class="badge bg-label-warning me-1">Pending</span>
-                <span *ngIf="(event.pointingOut | date:'HH:mm:ss') !== '00:00:00'">{{ event.pointingOut | date:'HH:mm:ss' }}</span>
               </td>
               <td class="text-center">
                 <img *ngIf="event.employeePhotoUrl" [src]="event.employeePhotoUrl" alt="Employee Photo" class="rounded-circle employee-photo" />

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MqttService } from './Services/mqtt.service';
+import { SignalRService } from './Services/signalR.service';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +11,12 @@ export class AppComponent {
   title = 'busTracking';
   message: string = '';
 
-  constructor(private mqttService: MqttService) {}
+  constructor(private mqttService: MqttService,private signalRService: SignalRService) {}
   ngOnInit(): void {
-
+ /*   this.signalRService.currentMessage.subscribe(message => {
+      this.message = message;
+      alert('New tracking event: ' + this.message); // Handle the message (e.g., display it in an alert)
+    });*/
 
   }
   sendMessage() {

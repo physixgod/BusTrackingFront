@@ -113,12 +113,9 @@ export class BusPointingEventsComponent implements OnInit {
           'RFID': event.rfid,
           'First Name': event.employeeFirstName,
           'Last Name': event.employeeLastName,
-          'Boarding Time': timestamp.toLocaleTimeString(),
-          'Arrival Time': pointingIn && (pointingIn.getHours() !== 0 || pointingIn.getMinutes() !== 0 || pointingIn.getSeconds() !== 0) 
+          'Departure Time': timestamp.toLocaleTimeString(),
+          'Boarding Time': pointingIn && (pointingIn.getHours() !== 0 || pointingIn.getMinutes() !== 0 || pointingIn.getSeconds() !== 0) 
             ? pointingIn.toLocaleTimeString() 
-            : 'N/A',
-          'Departure Time': pointingOut && (pointingOut.getHours() !== 0 || pointingOut.getMinutes() !== 0 || pointingOut.getSeconds() !== 0) 
-            ? pointingOut.toLocaleTimeString() 
             : 'N/A',
         };
       });

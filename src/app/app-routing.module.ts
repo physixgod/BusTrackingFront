@@ -16,13 +16,19 @@ import { AuthGuard } from './auth.guard';
 import { EmployeeMapViewComponent } from './Components/employee-map-view/employee-map-view.component';
 import { AddEmployeesExcelComponent } from './Components/add-employees-excel/add-employees-excel.component';
 import { EmployeeHistoryComponent } from './Components/employee-history/employee-history.component';
+import { AddUserComponent } from './Components/add-user/add-user.component';
+import { DriverComponent } from './Components/driver/driver.component';
+import { BusComponentComponent } from './Components/bus-component/bus-component.component';
+import { BusDetailsComponent } from './Components/bus-details/bus-details.component';
+
 const routes: Routes = [
   {
     path: '',
     component:AuthLayoutComponent,
     children:[
     { path: 'login', component: LoginComponent },
-    {path:'forgetpassword',component:ForgetPasswordComponent}
+    {path:'forgetpassword',component:ForgetPasswordComponent},
+    { path: '', redirectTo: 'login', pathMatch: 'full' } 
   ]
   },
   {
@@ -35,7 +41,11 @@ const routes: Routes = [
       { path: 'EmployeeProfile', component: EmployeeProfileComponent, canActivate: [AuthGuard] },
       { path: 'Mapview', component: EmployeeMapViewComponent, canActivate: [AuthGuard] },
       { path: 'AddEmployeeExcel',component:AddEmployeesExcelComponent,canActivate:[AuthGuard]},
-      { path: 'EmployeeHistory',component:EmployeeHistoryComponent,canActivate:[AuthGuard]}
+      { path: 'EmployeeHistory',component:EmployeeHistoryComponent,canActivate:[AuthGuard]},
+      { path: 'AddUser',component:AddUserComponent,canActivate:[AuthGuard]},
+      { path: 'AddDriver',component:DriverComponent,canActivate:[AuthGuard]},
+      { path: 'Bus',component:BusComponentComponent,canActivate:[AuthGuard]} ,
+      { path: 'BusDetails' ,component:BusDetailsComponent,canActivate:[AuthGuard]}
     ]
   },
   { path: '**', redirectTo: '' }
